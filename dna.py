@@ -1,7 +1,14 @@
 import sys
 import csv
 
-dna = argv[1]
+material = sys.argv[1]
 
-with open dna as f:
+dna = []
+
+with open (material, "r") as f:
     reader = csv.DictReader(f)
+    for sequence in f:
+        dna.append(sequence)
+        print(sequence)
+        
+        
