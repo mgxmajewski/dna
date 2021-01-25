@@ -7,8 +7,17 @@ dna = []
 
 with open (material, "r") as f:
     reader = csv.DictReader(f)
-    for sequence in f:
-        dna.append(sequence)
-        print(sequence)
-        
-        
+    for nucleotide in f:
+        dna.append(nucleotide)
+
+
+sequences = []
+
+i = 0
+
+
+for i in range (i, len(nucleotide), i+4):
+    sequences = nucleotide[i:i+4]
+    i += 1
+    print(sequences)
+ -
