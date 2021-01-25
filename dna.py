@@ -16,8 +16,14 @@ sequences = []
 i = 0
 
 
+sequences = []
+
+i = 0
+
+
 for i in range (i, len(nucleotide), i+4):
-    sequences = nucleotide[i:i+4]
+    sequences.append(nucleotide[i:i+4])
     i += 1
-    print(sequences)
- -
+
+
+print(sequences)
