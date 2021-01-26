@@ -18,12 +18,11 @@ print(dna_str)
 
 dna_material = sys.argv[2]
 
-dna = []
 
 with open (dna_material, "r") as f:
-    reader = csv.reader(f)
-    for nucleotide in f:
-        dna.append(nucleotide)
+    dna = f.read()
+
+print(dna)    
 
 sequences = []
 
@@ -41,7 +40,7 @@ for k in range(x):
     if sequences[k] not in unique_sequences:
         unique_sequences.append(sequences[k])
         
-print(sequences)
+# print(sequences)
 
 # print(people)
 # print(dna)
