@@ -8,10 +8,11 @@ people_database = sys.argv[1]
 
 with open (people_database, "r") as f:
     people_reader = csv.reader(f)
+    sequences_to_analize = next(people_reader)[1:]
     for row in people_reader:
         print (row)
 
-
+print(sequences_to_analize)
 
 
 dna_material = sys.argv[2]
