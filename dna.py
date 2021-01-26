@@ -7,12 +7,13 @@ people_database = sys.argv[1]
 # people = []
 
 with open (people_database, "r") as f:
-    people_reader = csv.reader(f)
-    sequences_to_analize = next(people_reader)[1:]
+    sequence_reader = csv.reader(f)
+    dna_str = next(sequence_reader)[1:]
+    people_reader = csv.DictReader(f)
     for row in people_reader:
         print (row)
 
-print(sequences_to_analize)
+print(dna_str)
 
 
 dna_material = sys.argv[2]
@@ -40,6 +41,7 @@ for k in range(x):
     if sequences[k] not in unique_sequences:
         unique_sequences.append(sequences[k])
         
+print(sequences)
 
 # print(people)
 # print(dna)
