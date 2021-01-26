@@ -4,12 +4,14 @@ import csv
 
 people_database = sys.argv[1]
 
-people = []
+# people = []
 
 with open (people_database, "r") as f:
-    people_reader = csv.DictReader(f)
-    for person in f:
-        people.append(person)
+    people_reader = csv.reader(f)
+    for row in people_reader:
+        print (row)
+
+
 
 
 dna_material = sys.argv[2]
@@ -38,11 +40,11 @@ for k in range(x):
         unique_sequences.append(sequences[k])
         
 
-print(people)
-print(dna)
+# print(people)
+# print(dna)
 
 
-print(len(unique_sequences))
-print(len(sequences))
+# print(len(unique_sequences))
+# print(len(sequences))
 
         
