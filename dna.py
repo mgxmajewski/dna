@@ -34,15 +34,20 @@ with open (dna_material, "r") as f:
 
 print(type(dna))
 
+extracted_seq = []
+
 for seq in range(len(dna_str)):
     for char in range(len(dna)):
         if dna_str[seq] == dna[char:char+len(dna_str[seq])]:
-            print(dna_str[seq] + "#" + dna[char:char+len(dna_str[seq])])
+            extracted_seq.append(dna[char:char+len(dna_str[seq])])
+            # if dna_str[seq]
+            # print(dna_str[seq] + "#" + dna[char:char+len(dna_str[seq])])
         # print(dna[seq:len(dna_str[seq])])
         # print(dna_str[seq])
         # if dna_str[seq] == dna[seq:len(dna_str[seq])]:
         #     print(dna[seq:len(seq)])
-       
+        
+print(extracted_seq)
         
 
 # sequences = []
