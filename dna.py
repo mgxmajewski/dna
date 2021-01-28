@@ -34,21 +34,45 @@ with open (dna_material, "r") as f:
 
 print(type(dna))
 
-extracted_seq = []
+extracted_seq = {}
 
+# Check how many dna_srt are there in dna 
 for seq in range(len(dna_str)):
+    counter = 1
     for char in range(len(dna)):
         if dna_str[seq] == dna[char:char+len(dna_str[seq])]:
-            extracted_seq.append(dna[char:char+len(dna_str[seq])])
+            if dna_str[seq] == dna[char+len(dna_str[seq]):char+ 2*len(dna_str[seq])]:
+                counter +=1
+                extracted_seq[dna_str[seq]] = counter
+                # print(dna_str[seq] + " " + str(counter))
+                # extracted_seq.append(dna[char:char+len(dna_str[seq])])
             # if dna_str[seq]
             # print(dna_str[seq] + "#" + dna[char:char+len(dna_str[seq])])
         # print(dna[seq:len(dna_str[seq])])
         # print(dna_str[seq])
         # if dna_str[seq] == dna[seq:len(dna_str[seq])]:
         #     print(dna[seq:len(seq)])
-        
-print(extracted_seq)
-        
+
+
+
+
+# for key, value in people_reader.items():
+#     if key not in name:
+#         print( key, value)
+
+for row in people_list:
+    for key, value in row.items():
+        if key not in 'name':
+            print(key, value, end=" ")
+    
+    print(row['name'])
+            
+ 
+ 
+ 
+ 
+# print(extracted_seq)
+
 
 # sequences = []
 
