@@ -1,0 +1,28 @@
+reads csv file as dictionary
+
+reads csv files header to extract str sequences to look for
+    make list of str sequences
+
+reads dna material as string
+
+for each str sequence in range of length of str sequences
+    takes each str sequences compares seq length of dna
+        if no match
+            moves one nuclotide
+        if match
+            moves seq length of nuclotide
+            create new list with some name
+            push first seq to list
+                if next is match
+                    push seq to created list list
+                if not
+                    return to higher loop
+
+function to return number of longest of seq
+in format of dictionary
+
+compare two dictionaries
+    if there is match
+        retrun name of match
+    if no match
+        pritns no match
