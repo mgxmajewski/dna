@@ -12,7 +12,7 @@ with open (people_database, "r") as f:
     people_list = list(people_reader)
         
             
-print(people_list)
+# print(people_list)
             
 
 
@@ -23,18 +23,27 @@ with open (people_database, "r") as f:
     sequence_reader = csv.reader(f)
     dna_str = next(sequence_reader)[1:]
 
-print(dna_str)
-for seq in range(len(dna_str)):
-    print(dna_str[seq])
+# print(dna_str)
+# for seq in range(len(dna_str)):
+#     print(dna_str[seq])
 
 # Read DNA sequence as a string
 dna_material = sys.argv[2]
 with open (dna_material, "r") as f:
     dna = f.read()
 
-print(dna)
+print(type(dna))
 
-
+for seq in range(len(dna_str)):
+    for char in range(len(dna)):
+        if dna_str[seq] == dna[char:char+len(dna_str[seq])]:
+            print(dna_str[seq] + "#" + dna[char:char+len(dna_str[seq])])
+        # print(dna[seq:len(dna_str[seq])])
+        # print(dna_str[seq])
+        # if dna_str[seq] == dna[seq:len(dna_str[seq])]:
+        #     print(dna[seq:len(seq)])
+       
+        
 
 # sequences = []
 
