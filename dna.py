@@ -43,13 +43,15 @@ str_found = []
     
 # Check how many dna_srt are there in dna 
 for seq in range(len(dna_str)):
+    counter = 3
     for char in range(len(dna)):
         char_last = len(dna_str[seq])
         if dna_str[seq] == dna[char: char + char_last]:
             str_found.append(dna_str[seq])
             if dna_str[seq] == dna[char + char_last: char + 2 * char_last]:
                 if dna_str[seq] == dna[char + 2* char_last: char + 3 * char_last]:
-                    extracted_seq[dna_str[seq]] += 1
+                    extracted_seq[dna_str[seq]] = str(counter)
+                    counter += 1
                     str_found.append(dna_str[seq])  
 
 print(extracted_seq)
@@ -73,7 +75,7 @@ for row in people_list:
     temp = row['name'] 
     del row['name']
     print(row)
-    if row == str(extracted_seq):
+    if row == extracted_seq:
         print(temp)
         flag = True
 
