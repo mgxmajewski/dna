@@ -3,6 +3,13 @@ import csv
 
  
 # Read database of people as a dictionary
+
+
+if len(sys.argv) < 3:
+    print("Provide 2 arguments")
+    exit(1)
+
+
 people_database = sys.argv[1]
 
 
