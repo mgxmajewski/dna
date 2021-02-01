@@ -1,5 +1,6 @@
 import sys
 import csv
+import itertools,operator
 
  
 # Validate arguments provided by user
@@ -15,8 +16,6 @@ with open(people_database, "r") as f:
     people_reader = csv.DictReader(f)
     people_list = list(people_reader)
         
-
-            
 
 # Read dna STR which are input to look for
 dna_str = []
@@ -35,17 +34,35 @@ with open(dna_material, "r") as f:
 # Add dictionary to keep SRT count
 extracted_seq = {}
 
-
 # Check how many dna_srt are there in dna
 
-longesr_srt_dna = []
-counter = 0
+separated_srt_dna = []
 
-for seq in dna_str:
-    print(seq)
+# separator = "-"
+# for seq in dna_str:
+#     counter = 0
+#     for nucleotide in range(len(dna)):
+#         seq_len = len(seq)
+#         if seq == dna[nucleotide:nucleotide + seq_len]:
+#             separated_srt_dna.append(separator)
+#             if seq == dna[nucleotide + seq_len : nucleotide + 2 * seq_len]:
+#               separated_srt_dna.append(seq)
+#                 # print(dna[nucleotide:nucleotide + seq_len])
+              
+# https://stackoverflow.com/questions/40166522/find-longest-sequence-of-0s-in-the-integer-list         
+r = max((list(y) for (x,y) in itertools.groupby((enumerate(A)),operator.itemgetter(1)) if x == 0), key=len)
+print(r[0][0]) # prints 12
+print(r[-1][0]) # prints 19
 
-
-
+print(separated_srt_dna)  
+                
+# for char in range(len(separated_srt_dna)):
+#     if '-' in separated_srt_dna[char] and '-' in separated_srt_dna[char-1]:
+#         separated_srt_dna[char] = "x"
+   
+   
+# print(separated_srt_dna)
+            
 # print(extracted_seq)
 # # Check how many dna_srt are there in dna 
 # for seq in range(len(dna_str)):
@@ -68,7 +85,7 @@ flag = False
 for row in people_list:
     temp = row['name'] 
     del row['name']
-    print(row)
+    # print(row)
     if row == extracted_seq:
         print(temp)
         flag = True
