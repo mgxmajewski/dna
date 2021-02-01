@@ -48,11 +48,27 @@ separated_srt_dna = []
 #             if seq == dna[nucleotide + seq_len : nucleotide + 2 * seq_len]:
 #               separated_srt_dna.append(seq)
 #                 # print(dna[nucleotide:nucleotide + seq_len])
+
+
+
               
-# https://stackoverflow.com/questions/40166522/find-longest-sequence-of-0s-in-the-integer-list         
+# 1 = https://stackoverflow.com/questions/40166522/find-longest-sequence-of-0s-in-the-integer-list
 r = max((list(y) for (x,y) in itertools.groupby((enumerate(A)),operator.itemgetter(1)) if x == 0), key=len)
 print(r[0][0]) # prints 12
 print(r[-1][0]) # prints 19
+
+
+
+# 2 https://stackoverflow.com/questions/40166522/find-longest-sequence-of-0s-in-the-integer-list
+import re
+my_str = "abcdefgfaabbbffbbbbbbfgbb"
+len(max(re.compile("(b+b)*").findall(my_str)))
+r = max((list(y) for (x,y) in itertools.groupby((enumerate(A)),operator.itemgetter(1)) if x == 0), key=len)
+# print(r[0][0]) # prints 12
+# print(r[-1][0]) # prints 19
+
+
+
 
 print(separated_srt_dna)  
                 
